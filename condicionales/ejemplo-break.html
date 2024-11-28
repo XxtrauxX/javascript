@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        let pais=(prompt("en que pais nació"));
+        
+
+        /* if(pais === "colombia") {
+           alert("su gentilicio es colombiano");
+
+        } else if( pais === "venezuela") {
+           alert("su gentilicio es colombiano");
+
+        } else{
+
+           alert("puede entrar a campus y debe participar en TALENTO TECH");
+        }
+
+        */
+
+        let edad= Number(prompt("Edad?"));
+        
+        
+         /*let msg= "";
+
+            if( edad > 17) {
+                msg=" eres mayor de edad";
+
+            } else {
+
+                msg= "eres mayor de edad";
+            }
+
+            */
+            // operador ternario
+            let msg= "" + ((edad > 17) ? "eres mayor" : "eres menor");
+
+
+
+
+        switch(pais) {
+
+            case "colombia":
+                alert("su gentilicio es colombiano" + msg);
+                break;
+
+            case "venezuela":
+                alert(" su gentilicio es venezolano" + msg);
+                break;
+
+
+            case "argentina":
+                alert("su gentilicio es argentino" + msg);
+                break;
+
+
+            default:
+                alert("no eres latino" + msg);
+
+            
+        }
+   </script>
+    
+</body>
+</html>
