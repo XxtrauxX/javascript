@@ -10,6 +10,23 @@
 
     <script>
 
+       let fecha = prompt("Ingrese la fecha en formato DD/MM/AAAA");
+
+        let lista = fecha.split("/");
+
+        if((lista[0] < 32 && lista[0] > 0) && (lista[1] < 13 && lista[1] > 0) && (lista[2] < 3000 && lista[2] > - 3400) ) {
+
+            alert(`ingresaste un año valido: ${fecha}`);
+
+        }  else {
+
+            alert("ingresaste un año Invalido")
+        }
+
+
+       
+
+
         
     </script>
     
