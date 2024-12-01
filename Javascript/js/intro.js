@@ -1,4 +1,6 @@
-console.log("*");
-console.log("**")
-console.log("****")
-console.log("*****")
+let tutorial ="tutorial"
+let numero = 5
+
+console.log(tutorial, numero)
+
+
