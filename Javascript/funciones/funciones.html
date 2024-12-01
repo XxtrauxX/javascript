@@ -25,6 +25,45 @@
 
        // función anónima
 
+       const suma = function(a,b) {
+
+        return a + b
+       }
+
+
+
+       // funciones flechas
+
+       const sumar = (a,b) =>  a+b 
+
+
+
+       // recursividad
+
+       function cuentaAtras(numero) {
+
+        if(numero < 0) {return}
+        console.log(numero)
+        cuentaAtras(numero -1)
+
+       }
+
+       // funcion factorial
+
+
+       function factorial(n) {
+
+        if(n === 0 || n == 1) {
+
+            return 1
+        } else {
+
+            return n * factorial(n-1)
+        }
+       }
+
+
+
 
 
 

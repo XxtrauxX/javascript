@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>palindrome</title>
+</head>
+<body>
+
+
+
+    <script>
+        let cadena = prompt("ingrese un nombre")
+        let lcadena = cadena.length -1;
+        let espal= true;
+        console.log(lcadena)
+
+        for(let i = 0; i<= lcadena ; i++) {
+            let linit = cadena[i];
+            //console.log(linit)
+            let lfin= cadena[lcadena -i];
+            console.log(` ------- ${linit} --------- ${lfin}`)
+           
+            if(linit !== lfin) {
+
+                espal= false;
+                break;
+            }
+
+            
+        }
+
+
+        console.log(espal ? "es palindrome" : "no es palindrome");
+       
+    </script>
+    
+</body>
+</html>
