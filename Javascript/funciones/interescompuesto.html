@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        function rendimiento(inversion,interes,tiempo) {
+            for(let i= 1; i<= tiempo; i++) {
+
+                let final= inversion * (1 + interes)
+                console.log(`AÑO: ${i} ----- rendimiento: ${final.toFixed(2)}`);
+                inversion = final;
+
+
+            }
+        } 
+
+
+
+
+        let inversion = 1_000.00;
+        const interes = 0.05;
+        const tiempo = 10;
+    </script>
+    
+</body>
+</html>
