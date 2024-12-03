@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // creacion como instancia de objeto
+
+        //let campers = new Array("Jinder","marlon","jose","nicolas");
+        //et salas = new Array(3);
+
+        //salas[0] = "sputniK";
+        //console.log(salas[0])
+
+        let frutas = ["manzana","pera","fresa","banano"];
+        /*for(let i= 0; i < frutas.length; i++) {
+
+            cosole.log(frutas[i])
+        }
+        */
+
+        /*
+        for(fruta of frutas) {
+
+            console.log(fruta);
+        }
+
+        */
+        // agrega a todos los elemntos del array una determinada caracteristicas
+        //frutas.forEach((f) => console.log(f + " criolla"));
+
+
+        // recorrido con funciones lambdas
+
+        //frutas.map(f) => console.log( f + "argentinas");
+        frutas.filter((f, pos) => console.log(f + "--" + pos));
+        frutas.filter((f, pos) => f.length < 5);
+        frutas.filter(f => f.length <5 ).map(f=> console.log(f))
+
+            
+
+
+    </script>
+    
+</body>
+</html>

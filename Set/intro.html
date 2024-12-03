@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        let conj= new Set();
+        console.log(conj.size)
+
+        conj.add("audi");
+        conj.add("mercedes");
+        conj.add("audi");
+        conj.delete("mercedes")
+        console.log(conj.has("mercedes")); // true si exite
+
+        // recorridos for of
+
+        for(let element of conj) {
+            console.log(element)
+        }
+
+        // recorrido for each
+
+        conj.forEach(element => console.log(element));
+
+
+        // values () devuelve un iterador con todos los valores
+        console.log(conj.values());
+        // clear borrar contenido
+        conj.clear();
+        console.log(conj.size);
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

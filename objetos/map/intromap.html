@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        const mapa = new Map()
+        //agregar llave valor al mapa
+        mapa.set("123", "warllen");
+        mapa.set("396", "ada");
+        mapa.set("133", "nicolas");
+
+
+        // HAS() verificar que una llave existe en el mapa
+
+        //console.log(mapa.has("laia"));
+
+        //GET () obiene el valor del mapa
+
+       // console.log(mapa.get("123"));
+       //console.log(mapa.get("555"));
+
+       // recorrerlo con for of
+
+       for(let llave of mapa.keys()) {
+        console.log(llave + " : " + mapa.get(llave));
+       }
+
+
+       // recorrido con for each
+       mapa.forEach((valor, llave) => console.log(llave + " -> " + valor));
+
+
+       console.log("tamaño :   " + mapa.size);
+       mapa.delete("133");
+       console.log("tamaño : "  + mapa.size);
+
+       mapa.clear()
+       console.log(mapa.size);
+
+
+       
+
+    </script>
+    
+</body>
+</html>

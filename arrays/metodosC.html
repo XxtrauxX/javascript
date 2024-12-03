@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        let carros= []
+
+        carros.push("renault 4", "fiat", "volvo","ferrari");
+        carros.pop()
+        carros.shift();
+        carros.unshift("audi");
+        console.log(carros)
+       console.log( carros.slice(1,3));
+
+        //metodo splice elimina en la posicion y reemplaza
+       carros.splice(1,2,"mercedes","mazda","nissan");
+       console.log(carros)
+
+        //metodo JOIN 
+       console.log("JOIN:  " + carros.join("; "))
+        //metood concat
+        carros= carros.concat("Toyota","mitsubishi")
+       console.log(carros)
+        //metodo reduce
+       let rta =carros.reduce((ant, curr) => (ant +=  curr.length <= 5  ? `, ${curr}` : ""), ant= "");
+       console.log(rta)
+
+       
+    
+
+
+        
+
+
+    </script>
+    
+</body>
+</html>

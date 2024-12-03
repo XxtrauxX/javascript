@@ -19,8 +19,27 @@
         // metodo some verificar si al menos 1 de los elmentos estaen un arrays
         const tieneEnamora= emojis.some(emoji => emoji === "enamorado")
         console.log(tieneEnamora)
+        // metodo every comprueba si todos los elementos cumplen una condicion en un array
+        
+        const todosFelices = emojis.every(emoji => emoji === "feliz")
+        console.log(todosFelices)
 
-        console.log(posicionemamorado)
+        const numbers = [2,4,6,8,10,12]
+        const todosPares = numbers.every(number=>number % 2 ===0)
+        console.log(todosPares)
+        
+
+        // metodo Find encuentre el primer elemento que cumpla la condicion
+        const numbers2 = [13, 27,44,-10,81]
+        const primernegativo = numbers2.find(number=> number < 0)
+        console.log(primernegativo)
+
+
+        //metodo findindex devuelve el index del primer elemnto en cumplir la condicion
+
+        const primerindexneg = numbers2.findIndex(number => number < 0)
+        console.log(primerindexneg)
+
 
 
 
