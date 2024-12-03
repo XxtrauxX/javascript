@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOFTWARE REVIEW</title>
+</head>
+
+<body>
+
+    <script>
+
+        // version beta 
+
+        choferes = []
+        function nombres() {
+            nombre = prompt("Ingresa el nombre del conductor");
+            choferes.push(nombre)
+
+        }
+
+        let a = 0
+
+        num1 = prompt(" Cuantos conductores desea agregar ?")
+
+        while (a < num1) {
+            nombres()
+            calculo()
+            a++
+
+    
+        }
+
+
+        function calculo() {
+
+            const dias = ["lunes", "martes", "miercoles", "jueves", "viernes", "sábado"];
+            kilometros = []
+            for (let i = 0; i < dias.length; i++) {
+
+                diaskilo = prompt(` ingrese los kilometros del: ${dias[i]}`);
+
+                //total+= diaskilo
+                kilometros.push(Number(diaskilo))
+
+                console.log(`el chofer: ${nombre} ---- el ${dias[i]}--- hizo --- ${kilometros[i]}--- KM`);
+
+            }
+
+
+        }
+
+        console.log(choferes.length)
+        console.log(kilometros)
+
+
+        for( let j = 0; j < choferes.length; j++) {
+
+            console.log(`el chofer: ${choferes[j]} -- el: ${dias[j]}--- ${kilometros[j]}`)
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //choferes.push(nombre)
+
+        console.log(choferes);
+        console.log(nombre)
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

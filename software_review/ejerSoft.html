@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Big Old - Control de Kilometraje</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>The Big Old - Control de Kilometraje</h1>
+        <button onclick="agregarChofer()">Agregar Chofer</button>
+        <h2>Registro de Kilometraje</h2>
+        <table id="tablaKilometraje">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Lun</th>
+                    <th>Mar</th>
+                    <th>Mié</th>
+                    <th>Jue</th>
+                    <th>Vie</th>
+                    <th>Sáb</th>
+                    <th>Tot K</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <h2>Estadísticas</h2>
+        <table id="tablaEstadisticas">
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <script>
+        let choferes = [];
+        const dias = ['Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'];
+
+        function agregarChofer() {
+            const nombre = prompt('Ingrese el nombre del chofer:');
+            if (!nombre) return;
+
+            const kilometros = [];
+            for (let i = 0; i < 6; i++) {
+                const km = prompt(`Ingrese kilómetros para ${dias[i]}:`);
+                kilometros.push(Number(km) || 0);
+            }
+
+            const total = kilometros.reduce((acc, curr) => acc + curr, 0);
+            choferes.push({ nombre, kilometros, total });
+
+            actualizarTablas();
+        }
+
+        function actualizarTablas() {
+            actualizarTablaKilometraje();
+            actualizarTablaEstadisticas();
+        }
+
+        function actualizarTablaKilometraje() {
+            const tbody = document.querySelector('#tablaKilometraje tbody');
+            tbody.innerHTML = '';
+
+            choferes.forEach(chofer => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td>${chofer.nombre}</td>
+                    ${chofer.kilometros.map(km => `<td>${km}</td>`).join('')}
+                    <td><strong>${chofer.total}</strong></td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        function actualizarTablaEstadisticas() {
+            if (choferes.length === 0) return;
+
+            const promediosDiarios = Array(6).fill(0).map((_, index) => {
+                const suma = choferes.reduce((acc, chofer) => acc + chofer.kilometros[index], 0);
+                return suma / choferes.length;
+            });
+
+            const promedioSemanal = choferes.reduce((acc, chofer) => acc + chofer.total, 0) / choferes.length;
+
+            const choferMayorRecorrido = choferes.reduce((prev, curr) =>
+                prev.total > curr.total ? prev : curr
+            );
+
+            const diaMayorKilometraje = dias[promediosDiarios.indexOf(Math.max(...promediosDiarios))];
+
+            const tbody = document.querySelector('#tablaEstadisticas tbody');
+            tbody.innerHTML = `
+                ${promediosDiarios.map((promedio, index) => `
+                    <tr>
+                        <td>Promedio ${dias[index]}</td>
+                        <td>${promedio.toFixed(2)} km</td>
+                    </tr>
+                `).join('')}
+                <tr>
+                    <td>Promedio Semanal por Chofer</td>
+                    <td>${promedioSemanal.toFixed(2)} km</td>
+                </tr>
+                <tr>
+                    <td>Chofer con Mayor Recorrido</td>
+                    <td>${choferMayorRecorrido.nombre} (${choferMayorRecorrido.total} km)</td>
+                </tr>
+                <tr>
+                    <td>Día con Mayor Kilometraje</td>
+                    <td>${diaMayorKilometraje}</td>
+                </tr>
+            `;
+        }
+    </script>
+</body>
+</html>
