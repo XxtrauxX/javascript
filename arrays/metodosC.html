@@ -32,6 +32,39 @@
        let rta =carros.reduce((ant, curr) => (ant +=  curr.length <= 5  ? `, ${curr}` : ""), ant= "");
        console.log(rta)
 
+
+       const numbers = [2,4,6,8,10];
+       const res =numbers.reduce((acc, item) => {
+
+        return acc= acc + item
+
+       },0);
+       console.log(res)
+
+       // acc es el acumulador y el item son todos los elementos del arrays
+       const cadenas3= ['mi', 'nombre', 'es', 'marcos'];
+       const res2 = cadenas3.reduce((acc, item)=> {
+
+        return acc += " " + item
+       }, ) ;
+
+       console.log(res2)
+
+       // trabajando con objetos
+
+       const obj = [
+        {nombre: 'marcos', edad: 15},
+        {nombre: 'lena', edad: 10}
+       ];
+
+
+       const res4= obj.reduce((acc,item)=>{
+
+        return acc += item.edad;
+       })
+
+       console.log(res4)
+
        
     
 

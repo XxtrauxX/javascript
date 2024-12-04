@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OBTENER DATOS FORMULARIO</title>
+</head>
+<body>
+    <h1>Obtener datos de un FORMULARIO</h1>
+
+    <form action="" onsubmit="return false">
+
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" id="nombre">
+        <br><br>
+        <label for="edad">Edad:</label>
+        <input type="number" name="edad" id="edad">
+        <button onclick="obtenerDatos()">Enviar</button>
+
+    </form>
+
+
+    <script>
+
+        function obtenerDatos() {
+            /*
+            const formu= document.forms["formu"]
+            let nombre = formu["nombre"].value
+            let edad = formu["edad"].value
+            alert (nombre + " " + edad)
+
+            */
+
+            const formu= document.forms["formu"]
+            const datosformu= new FormData(formu);
+            datosformu.forEach((k, v) => console.log(k + " -> " + v));
+            //const serialform = JSON.stringify(datosformu.entries());
+            
+
+
+        }
+
+
+        // objeto FormData
+
+        const FData= new FormData();
+        //agregar datos al formdata
+        FData.append("david",20);
+        FData.append("Jenny", 15);
+        console.log(FData)
+        for(const [llave, valor] of FData) 
+
+            console.log(llave + " : " + valor);
+        
+
+        // FORM.DATA.HAS() -> TRUE / FALSE SI ESTA EN LA LLAVE FORMDATA
+        //.delete(keys) -> elimina la llave, valor si existe
+        // .get(keys) -> devulve el valor de una llave
+        //getALL() todos los resultados [keys, value]
+
+
+    </script>
+    
+</body>
+</html>

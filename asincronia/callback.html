@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        function myDisplayer(some) {
+            console.log(some);
+        }
+
+
+        function esPrimo(num) {
+            console.log(` ${num} es un numero primo`)
+        }
+
+        function espar(num) {
+            return num%2 == 0;
+        }
+
+        // consulta antesedentes de la policia. requiereel numero de identificacion y nos devuelve si tiene antecedentes o no 
+        const consultarPolicia = (callback) => {
+            setTimeout(() => {
+                const segDesde1970 = Math.floor(Date.now() / 1000)
+                if(!callback()) {
+                    console.log( segDesde1970 + "no tiene antecedentes");
+                } else {
+                    console.log(segDesde1970 + "tiene antecedentes");
+                }
+            })
+        }
+        function mycalculator(num1,num2, funcCallback) {
+            let sum = num1 + num2;
+            funcCallback(sum);
+        }
+
+
+        mycalculator(5,5, myDisplayer);
+        mycalculator(5,5, esPrimo)
+
+        consultarPolicia(mycalculator(myDisplayer));
+        consultarPolicia(esPrimo)
+        let tiempo = 3
+        for(let i = 0; i <= 7; i++) {
+
+            setTimeout((i)=> {
+                console.log("Ejecucion" + i)
+                consultarPolicia(espar)
+            }, tiempo++);
+        }
+
+    </script>
+    
+</body>
+</html>
