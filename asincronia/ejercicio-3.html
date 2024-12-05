@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <title> Lecura de archivo con promesa</title>
+</head>
+<body>
+
+    <h1>Lecura de un archivo usando promesas</h1>
+    <hr>
+
+    <input type="file" name="selfile" id="selfile"
+    onclick="leerarchivo()">
+
+<script>
+    /*
+
+    function leerarchivo() {
+        alert("vamos bien perros");
+        const archivo= document.childNodes[2].file[0];
+        console.log("archivo seleccionado: " + archivo)
+    }
+
+    */
+
+
+    function leerArchivo (archivo)
+    return new promise((resolve, reject) => {
+        const lector = new Promise((resolve,reject) => {
+            const lector= new FileReader();
+
+            lector.onload = () => resolve(lector.result);
+            lector.onerror = () => reject("error. no se pudo leer el archivo");
+
+            lector.readAsText(Text)
+        })
+    })
+
+    document.getElementById("selfile").addEventListener("change", (evento) => {
+        const archivo = evento.target.files[0];
+        console.log("archivo seleccionado:  " + archivo);
+
+        if(archivo) {
+            leerarchivo(archivo)
+            .then(contenido => console.log("contenido archivo: \n", contenido))
+            .cath(error=> console.error("error al leer el archivo: ", error));
+        }
+    })
+</script>
+    
+</body>
+</html>
