@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>REGISTRO DE MASCOTAS</h1>
+    
+
+    <form action="">
+
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" id="nombre">
+        <br><br>
+        <label for="edad">Edad:</label>
+        <input type="number" name="edad" id="edad">
+        <br>
+        <br>
+        <label for="raza">Raza:</label>
+        <input type="text" name="raza" id="raza">
+        <button onclick="obtenerDatos()">Enviar</button>
+
+    </form>
+
+    <script>
+        function obtenerDatos() {
+
+            const nombre = document.getElementById("nombre").value;
+            const edad = parseFloat(document.getElementById("edad")).value;
+
+
+            return document.write(nombre)
+        }
+
+
+        
+    </script>
+
+    
+</body>
+</html>

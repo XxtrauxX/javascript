@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EJERCICIO MASCOTAS
+    </title>
+
+</head>
+<body>
+    <script>
+        
+        
+        function menu(){
+        alert("Bienvenido al sistema de Registro ")
+        const elect = prompt("****** MENU******* \n 1. Agregar mascota al refugio \n 2. Listar mascotas del refugio");
+        }
+        const mascotas = [];
+        const copymascotas = [];
+        let masc = []
+        let i = 1;
+        
+
+
+ 
+
+
+        switch (elect) {
+
+            case "1":
+                agregarMascota()
+                
+
+                break;
+
+
+            case "2":
+                listarMascotas()
+        }
+
+
+
+        function agregarMascota() {
+         let pin= prompt("cuantas mascotas va a agregar? ");
+         for (let i = 1; i<= pin; i++) {
+          let nombreMascota = prompt("has accedido a la opción Agregar Mascota\n INGRESE EL NOMBRE");
+          let edad= prompt("edad? ");
+          let raza= prompt("raza? ");
+          let adop= prompt("adoptado?  sí ---> true ...  no ----> false");
+
+          const mascota =new Object()
+
+
+          mascota["nombre"]= nombreMascota;
+          mascota["edad"]=edad;
+          mascota["raza"]=raza;
+          mascota["adoptado"]=adop;
+
+
+
+          mascotas.push(mascota)
+
+
+          
+
+
+          
+          //mascotas.push(copymascotas)
+
+
+          
+
+
+          
+         }
+            
+
+           
+
+         
+           return
+
+        } 
+
+
+
+        function listarMascotas() {
+
+            alert("vamos bien perros")
+        }
+
+        //mascotas.push(copymascotas)
+
+
+        //console.log(mascota)
+        console.table(mascotas)
+        //console.log(copymascotas)
+
+
+
+    </script>
+</body>
+</html>

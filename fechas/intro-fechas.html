@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FECHAS</title>
+</head>
+<body>
+
+    <script>
+
+        const ahora = new Date();
+        console.log(ahora)
+
+
+
+        const horaJeni = new Date(2001,12,28,6,0,0);
+        console.log(horaJeni)
+
+        const horaander = new Date(1997, 10, 18);
+        console.log(horaander);
+
+
+
+        fecha=new Date()
+        fecha.setFullYear(2024);
+        fecha.setMonth(11);
+        fecha.setDate(8);
+        console.log(fecha);
+
+
+        console.log("Dia Anderson " + horaander.getDay());
+
+        console.log("cadena: " + horaander.toDateString())
+        console.log("Milisegundos de Anderson " + horaander.getTime());
+        console.log(" DIAS DE DIF. ANDERSON Y JENNIFER" + horaJeni.getTime() - horaander.getTime());
+        
+
+
+
+
+    </script>
+    
+</body>
+</html>
