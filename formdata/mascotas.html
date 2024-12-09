@@ -12,32 +12,58 @@
     <script>
         
         
-        function menu(){
-        alert("Bienvenido al sistema de Registro ")
-        const elect = prompt("****** MENU******* \n 1. Agregar mascota al refugio \n 2. Listar mascotas del refugio");
+        function intro() {
+        alert("Bienvenido al sistema de Registro ");
+        return
+        }
+        function menu() {
+        alert("****** MENU******* \n 1. Agregar mascota al refugio \n 2. Listar mascotas del refugio");
+            
         }
         const mascotas = [];
         const copymascotas = [];
-        let masc = []
+        //let masc = []
         let i = 1;
+
+
+
+        intro()
+        menu()
+        perros()
         
 
 
  
 
+        function perros() {
 
-        switch (elect) {
+            let elect = prompt("opcion?");
+            switch (elect) {
 
-            case "1":
-                agregarMascota()
-                
+                case "1":
+                    agregarMascota()
+                    let desi= prompt("desea ir al menu----> 1. finalizar---> 2.");
+                        if(desi< 2) {
 
-                break;
+                            menu()
+                            perros()
+
+                        } else {
+
+                            alert("error 404ª")
+                        }
 
 
-            case "2":
-                listarMascotas()
-        }
+                    break;
+
+
+                case "2":
+                    listarMascotas()
+            }
+
+    }
+
+        
 
 
 
@@ -87,7 +113,9 @@
 
         function listarMascotas() {
 
-            alert("vamos bien perros")
+            console.log(mascotas)
+            
+        
         }
 
         //mascotas.push(copymascotas)
