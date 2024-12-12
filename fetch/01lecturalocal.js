@@ -14,7 +14,7 @@ btnmostrarTXT.addEventListener("click", e => {
 
 
 const btnmostrarJSON = document.getElementById("mostrarjson");
-const areaJSON = document.getElementById("datotabla");
+const areaJSON = document.getElementById("datostabla");
 btnmostrarJSON.addEventListener("click", e => {
     mostrarJSON(areaJSON);
 })

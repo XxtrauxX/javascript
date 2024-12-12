@@ -3,11 +3,11 @@ export default function mostrarJSON(elemHTML) {
     console.log("vamos bien")
     fetch("datos.json")
     .then(respuesta => respuesta.json())
-    .then(datos => {
+    .then((datos) => {
         console.table(datos);
         dibujarfilas(elemHTML, datos);
     })
-    .catch((error)=>
+    .catch((error) =>
     console.error("se ha consumido todo el JSON", error.message)
     )
     .finally(() => console.log("se ha termiando el JSON"))
@@ -20,17 +20,19 @@ function dibujarfilas(elemHTML, datos) {
     for(let dato of datos) {
         tabla+= `
         <tr>
-            <td>${dato.nombre}</td>
-            <td>${dato.team}</td>
+            <td>${dato.Nombre}</td>
+            <td>${dato.Team}</td>
             <td class="valedad">${dato.Edad}</td>
             <td class="tdimg">
-                <td class="tdimg">
-                <img src=${dato.sexo === "F" ? "mujer.png" : 
+                     <img src=${dato.Sexo === "F" ? "mujer.png" : 
             "hombre.png"} class="imgsexo">
+            </td>
             
         </tr>
-        `
+
+        `;
 
         
     }
+    elemHTML.innerHTML = tabla;
 }
