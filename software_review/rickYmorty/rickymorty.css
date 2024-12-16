@@ -1,0 +1,21 @@
+body {
+
+    box-sizing: border-box;
+
+}
+
+
+
+
+
+
+
+.personajes {
+
+    display: flex;
+    gap: 2%;
+    flex-direction: row;
+    
+
+
+}
