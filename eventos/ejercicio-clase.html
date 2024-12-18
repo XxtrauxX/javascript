@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    .contenedor {
+        margin: 0 auto;
+        width: 70%;
+        background-color: rgb(255, 141, 11);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .button {
+        background-color: aqua;
+        height: 40px;
+        border-radius: 10px;
+    }
+
+    .button2 {
+        background-color: rgb(255, 0, 0);
+        height: 40px;
+        border-radius: 10px;
+    }
+</style>
+
+<body>
+    <div class="contenedor">
+        <h3>Ejemplo Eventos js -aumentar y Disminuir</h3>
+        <h1>Contador</h1>
+        <div class="botones">
+            <button class="button">Aumentar</button>
+            <button class="button2">Disminuir</button>
+        </div>
+        <br><br>
+        <div> <p id="contador">
+
+            </p>
+        </div>
+    </div>
+</body>
+
+<script>
+
+    let aumen = document.querySelector(".button");
+    let dism = document.querySelector(".button2");
+    let contador = document.querySelector("#contador");
+
+    let i = 0;
+    function sum () {
+        i++;
+        contador.textContent = `Contador:${i}`;
+    }
+
+    function res () {
+        i--;
+        contador.textContent = `Contador: ${i}`;
+    }
+
+    aumen.addEventListener("click", sum);
+    dism.addEventListener("click", res);
+</script>
+
+</html>

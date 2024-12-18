@@ -1,0 +1,18 @@
+
+
+<button>Saludar</button>
+
+<script>
+
+    const button = document.querySelector("button");
+    const changeColor = () => button.classList.toggle("red");
+    const showMessage = () => {
+         alert("boton pulseado perrin");
+         button.removeEventListener("click", showMessage)
+    }
+    
+
+    button.addEventListener("click", showMessage);
+    button.addEventListener("click", changeColor);
+
+</script>

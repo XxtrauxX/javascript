@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuadrado Aleatorio</title>
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            overflow: hidden;
+            background-color: #f5f5f5;
+        }
+
+        #square {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            cursor: pointer;
+            transition: all 0.1s ease;
+        }
+
+        .header {
+            padding: 1rem;
+            background-color: #333;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h2>Intenta atrapar el cuadrado "si puedes"</h2>
+    </div>
+    <div id="square"></div>
+
+    <script>
+        const cuadrado = document.getElementById('square');
+        
+        
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        
+        function moveSquare() {
+            const maxX = window.innerWidth - 100;  
+            const maxY = window.innerHeight - 100; 
+            
+            const randomX = Math.floor(Math.random() * maxX);
+            const randomY = Math.floor(Math.random() * (maxY - 50) + 50); 
+            
+            square.style.left = randomX + 'px';
+            square.style.top = randomY + 'px';
+            square.style.backgroundColor = getRandomColor();
+            square.style.border = `3px solid ${getRandomColor()}`;
+        }
+
+        
+        moveSquare();
+
+        
+        square.addEventListener('mouseover', moveSquare);
+
+       
+        window.addEventListener('resize', moveSquare);
+    </script>
+</body>
+</html>
