@@ -20,11 +20,15 @@ function controladorEvento () {
 
 //opcion recomendada
 
-
+/*
 buttonshow.addEventListener('click', controladorEvento)
 input.addEventListener('change', function(e) {
     changeuser.textContent = e.target.value
 })
+
+*/
+
+
 
 // ver en donde se hizo click
 /*
@@ -42,3 +46,21 @@ wrapper.addEventListener('click', function(e){
 wrapper.addEventListener('click', function(e){
  e.target.style.backgroundColor = "hotpink"
 })
+
+
+
+function showsection() {
+
+    wrapper.className = "show"
+
+}
+
+
+function hidesection() {
+
+    wrapper.className = "hide"
+}
+
+
+buttonshow.addEventListener('click', showsection)
+buttonhide.addEventListener('click', hidesection)
