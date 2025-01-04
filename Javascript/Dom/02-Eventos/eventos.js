@@ -1,19 +1,29 @@
+/*
+
 const wrapper = document.querySelector('[data-id="wrapper"]');
 const input = document.querySelector('[type="text"]');
 const changeuser = document.querySelector('[data-id="name"]');
 
+*/
+
 
 const section = document.querySelector('.section');
+
+/*
 const buttonshow =document.querySelector('[data-id="button-show"]');
 const buttonhide = document.querySelector('[data-id="button-hide"]');
 
+*/
 
+/*
 function controladorEvento () {
 
     const nombre = prompt('¿cual es tu nombre');
     alert(`tu nombre es ${nombre}`)
 
 }
+
+*/
 // opcion alternativa
 //buttonshow.onclick = controladorEvento;
 
@@ -43,6 +53,8 @@ wrapper.addEventListener('click', function(e){
 
 
 // cambiar el fondo donde le demos click en wrapper
+
+/*
 wrapper.addEventListener('click', function(e){
  e.target.style.backgroundColor = "hotpink"
 })
@@ -64,3 +76,38 @@ function hidesection() {
 
 buttonshow.addEventListener('click', showsection)
 buttonhide.addEventListener('click', hidesection)
+
+
+function handleEvent (e) {
+
+    // e.currentTarget.nodeName
+
+    console.log(`has dado click en ${e.target.nodeName}`)
+
+}
+
+
+
+document.body.addEventListener('click', handleEvent);
+
+
+*/
+
+
+
+
+function eventdelegation(e) {
+    if(e.target.matches('.button-color')) {
+        const getColor = e.target.getAttribute('data-color')
+
+        e.currentTarget.style.backgroundColor = getColor;
+    }
+
+}
+
+
+section.addEventListener('click', eventdelegation);
+
+
+
+
