@@ -1,0 +1,14 @@
+{
+  "tareas": [
+    {
+      "texto": "nadar",
+      "completada": false,
+      "id": 1
+    },
+    {
+      "texto": "caminar por el parque",
+      "completada": false,
+      "id": 2
+    }
+  ]
+}

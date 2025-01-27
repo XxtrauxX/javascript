@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tareas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="estilo.css">
+    
+</head>
+<body class="bg-gray-100 p-8">
+    <div class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl p-6">
+        <h1 class="text-2xl font-bold mb-4">Lista de Tareas</h1>
+        <form id="tareaForm" class="mb-4">
+            <input type="text" id="nuevaTarea" placeholder="Nueva tarea" class="w-full px-3 py-2 border rounded-md mr-2">
+            <button type="submit" class="mt-2 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">Agregar</button>
+        </form>
+        <ul id="listaTareas" class="list-none"></ul>
+    </div>
+    <script src="interac.js"></script>
+</body>
+</html>
